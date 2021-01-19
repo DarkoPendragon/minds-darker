@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Minds Darker",
+  "author": "Darko Pendragon",
+  "description": "Attempts to make Minds.com's dark mode better",
+  "version": "0.1",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.minds.com/*"
+      ],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "matches": [
+      "https://www.minds.com/*"
+    ],
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Open Minds",
+    "default_icon": "icon.png"
+  }
+}
