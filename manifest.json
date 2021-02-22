@@ -9,12 +9,15 @@
     "48": "icon.png",
     "128": "icon.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [
         "https://www.minds.com/*"
       ],
-      "css": ["styles.css"]
+      "js": ["content.js"]
     }
   ],
   "background": {
