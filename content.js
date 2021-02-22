@@ -6,8 +6,14 @@ function setCSS() {
   link_tag.id = 'minds-darker-id';
   document.lastChild.appendChild(link_tag);
 }
-setCSS();
-chrome.storage.local.set({"mindsDarkerSettings": "dark"});
+
+chrome.storage.local.get("mindsDarkerSettings", (res) => {
+  if (res && res.mindsDarkerSettings && res.mindsDarkerSettings == "dark") setCSS();
+  else if (res && !res.mindsDarkerSettings) {
+    setCSS();
+    chrome.storage.local.set({"mindsDarkerSettings": "dark"});
+  }
+})
 
 chrome.runtime.onMessage.addListener((request, sender, callback) => {
   if (request == "removeMindsDarkerCSS") {
