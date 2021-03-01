@@ -17,7 +17,7 @@
       "matches": [
         "https://www.minds.com/*"
       ],
-      "js": ["content.js"]
+      "js": ["jquery.min.js","content.js"]
     }
   ],
   "background": {
