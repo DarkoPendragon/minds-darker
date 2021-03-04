@@ -3,7 +3,7 @@
   "name": "Minds Darker",
   "author": "Darko Pendragon",
   "description": "Attempts to make Minds.com's dark mode better",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
