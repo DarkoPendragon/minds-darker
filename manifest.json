@@ -18,7 +18,7 @@
         "https://www.minds.com/*"
       ],
       "js": ["./js/jquery.min.js","./js/jquery.initialize.min.js","./js/content.js"],
-      "css": ["./assets/root.css","./assets/testing.css"]
+      "css": ["./assets/root.css"]
     }
   ],
   "background": {
