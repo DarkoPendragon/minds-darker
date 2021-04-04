@@ -1,0 +1,16 @@
+:root {
+  --pitch-dark: #000000;
+  --prime-border-color: #333333;
+  --light-dark: #191919;
+  --light-dark-inside: #232121;
+  --header-border: #1a1a1a;
+  --prime-link: #f05837;
+  --prime-secondary-link: #d53410;
+  --prime-linktext: #afb1b6;
+  --prime-header: #f05837;
+  /* Sue me, Sargon */
+  --lotus-primary: #322f4e;
+  --lotus-jumbo: #1b1a20;
+  --lotus-light-dark-inside: #363354;
+  --lotus-linkb: #878fff;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minds Darker Settings</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+  </head>
+  <body class="popupBody">
+    <h1 class="header">Minds Darker Settings</h1>
+    <div class="popupContainer">
+      <h2>Set Default Themes</h2>
+      <div class="option" id="themeSel">
+        <label style="display: inline-block;">
+          <button type="button" id="setDarkerTheme">Set Darker Theme</button>
+        </label>
+        <label style="display: inline-block;">
+          <button type="button" id="setLotusTheme">Set Lotus Theme</button>
+        </label>
+      </div>
+      <!-- /// -->
+      <h2>Set Theme Options (Darker)</h2>
+      <div class="option">
+        <div class="gridItem"><p>Background:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #000000" id="pitchdark"></div>
+        <div class="gridItem"><p>Border Color:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #333333" id="primebordercolor"></div>
+        <div class="gridItem"><p>Scroll Feed Background:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #191919" id="lightdark"></div>
+        <div class="gridItem"><p>Header Border:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #232121" id="lightdarkinside"></div>
+        <div class="gridItem"><p>Header Color:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #1a1a1a" id="headerborder"></div>
+        <div class="gridItem"><p>Settings Hover:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primelink"></div>
+        <div class="gridItem"><p>Discovery Top Item Color:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #d53410" id="primesecondarylink"></div>
+        <div class="gridItem"><p>Discovery Top Item Text:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #afb1b6" id="primelinktext"></div>
+        <div class="gridItem"><p>Group Msg Toggle Border:</p></div>
+        <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primeheader"></div>
+      </div>
+      <div style="text-align: center;">
+        <button type="button" id="saveDarker">Save Changes</button>
+      </div>
+      <h2>Set Theme Options (Lotus)</h2>
+      <div class="option">
+        <h1>W.I.P</h1>
+      </div>
+      <h2>Import/Export Theme Settings</h2>
+      <div class="option">
+        <label style="display: inline-block;">
+          <button type="button" id="importTheme">Import Theme</button>
+        </label>
+        <label style="display: inline-block;">
+          <button type="button" id="exportTheme">Export Theme</button>
+        </label>
+      </div>
+      <h2>Dev Options</h2>
+      <div class="option">
+        <label style="display: inline-block;">
+          <button type="button" style="background: red;" id="_clearCache">CLEAR LOCAL STORAGE</button>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
