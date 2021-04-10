@@ -1,43 +1,66 @@
 const PRM_SETTINGS = [
   {state: "dark"},
   {pitchdark: "#000000"},
-  {bordercolor: "#333333"},
   {lightdark: "#191919"},
   {lightdarkinside: "#232121"},
-  {primeheader: "#f05837"},
+  {headerbackground: "#f05837"},
   {headerborder: "#1a1a1a"},
-  {link: "#f05837"},
-  {secondarylink: "#d53410"},
-  {linktext: "#afb1b6"}
+  {headercolor: "inherit"},
+  {primebordercolor: "#333333"},
+  {groupmsgborder: "#f05837"},
+  {primelink: "#f05837"},
+  {activityhero: "#d53410"},
+  {activityherotext: "#afb1b6"},
+  {primeheader: "#f05837"},
+  {lotusprimary: "#322f4e"},
+  {lotusjumbo: "#1b1a20"},
+  {lotuslightdarkinside: "#363354"},
+  {lotuslinkb: "#878fff"},
 ]
 const LTS_SETTINGS = [
-  {state: "dark"},
+  {state: "lotus"},
   {pitchdark: "#000000"},
-  {bordercolor: "#333333"},
+  {primebordercolor: "#333333"},
   {lightdark: "#1b1a20"},
   {lightdarkinside: "#363354"},
-  {primaryheader: "#322f4e"},
-  {link: "#878fff"},
-  {secondarylink: "#d53410"},
-  {linktext: "#afb1b6"}
+  {primeheader: "#322f4e"},
+  {primelink: "#878fff"},
+  {activityhero: "#d53410"},
+  {activityherotext: "#afb1b6"}
 ]
 
 $(document).ready(() => {
-  $("#saveDarker").on("click", async () => {
-    console.log("DARKER SAVE CLICKED");
-    let newSts = {}
-    if ($("#pitchdark").val() != undefined) newSts.pitchdark = $("#pitchdark").val()
-    if ($("#primebordercolor").val() != undefined) newSts.bordercolor = $("#primebordercolor").val()
-    if ($("#lightdark").val() != undefined) newSts.lightdark = $("#lightdark").val()
-    if ($("#lightdarkinside").val() != undefined) newSts.lightdarkinside = $("#lightdarkinside").val()
-    if ($("#headerborder").val() != undefined) newSts.headerborder = $("#headerborder").val()
-    if ($("#primelink").val() != undefined) newSts.link = $("#primelink").val()
-    if ($("#primesecondarylink").val() != undefined) newSts.secondarylink = $("#primesecondarylink").val()
-    if ($("#primelinktext").val() != undefined) newSts.linktext = $("#primelinktext").val()
-    if ($("#primeheader").val() != undefined) newSts.primeheader = $("#primeheader").val()
+  var coll = document.getElementsByClassName("collapser");
+  var i;
 
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {msg: "setSettings", args: Array(newSts)}, () => {
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+        content.style.padding = "0px 10px"
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding = "10px 10px"
+      }
+    });
+  }
+
+  $("#saveDarker").on("click", async () => {
+    let newSts = []
+    // console.log($('#darkThemeInputs :input'));
+    var inputValues = $('#darkThemeInputs :input').map(function(t) {
+      var type = $(this).prop("type")
+      var init = $(this).attr('id')
+      var cnt = $(this).val()
+      if (type == "text" && $(this).val()) return newSts.push(JSON.parse(`{"${init}": "${cnt}"}`));
+    })
+    console.log(newSts);
+    if (newSts.length < 1) return;
+
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      chrome.tabs.sendMessage(tabs[0].id, {msg: "setSettings", args: newSts}, () => {
         alert("[MD] Settings saved (probably)!")
         return Promise.resolve(true)
       })
@@ -45,8 +68,6 @@ $(document).ready(() => {
   })
 
   $("#setDarkerTheme").on("click", async () => {
-    console.log("DARKER WAS CLICKED");
-    console.log(PRM_SETTINGS);
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, {msg: "setSettings", args: PRM_SETTINGS}, () => {
         alert("[MD] Settings set to Darker (probably)!")
@@ -56,8 +77,6 @@ $(document).ready(() => {
   })
 
   $("#setLotusTheme").on("click", async () => {
-    console.log("LOTUS WAS CLICKED");
-    console.log(LTS_SETTINGS);
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, {msg: "setSettings", args: LTS_SETTINGS}, () => {
         alert("[MD] Settings set to Lotus (probably)!")
@@ -90,7 +109,6 @@ $(document).ready(() => {
         await awsw.forEach((k, i) => {
           uwu[i] = {[k[0]]: `${[k[1]]}`}
         })
-        console.log(uwu);
         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
           chrome.tabs.sendMessage(tabs[0].id, {msg: "setSettings", args: uwu}, () => {
             alert("[MD] Theme imported (probably)!")
@@ -100,4 +118,20 @@ $(document).ready(() => {
       }
     })
   })
+
+  $("#_clearCache").on("click", async () => {
+    var cn = confirm("Clear the local cache?")
+    if (cn == true) {
+      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, "clearMDStorage", () => {
+          alert("[MD] Settings cleared (probably)!")
+          return Promise.resolve(true)
+        })
+      })
+    }
+  })
+
+  $('.collapseHeader').on("click", () => {
+    $('.collapseContent').slideToggle();
+  });
 })

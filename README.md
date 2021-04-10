@@ -13,17 +13,17 @@ To install it (since it's not on the webstore):
 
 # Importing/Exporting
 As of [v1.2](https://github.com/DarkoPendragon/minds-darker/releases/tag/v1.2) you can export your own saved settings and import them or others as well. Hitting the `Export` button will copy your current settings to your clipboard, `Import` will prompt you for that or a similiar string. Just remember that this will overwrite your current settings and you will not be able to get them back.  
-  
-Here's an example theme you can import that uses less orange colors, called "Cool Blue":
+
+Here's an example theme you can import that uses less orange colors, called "Cool Blue" (updated for 1.2.1 changes):
 ```
-{"bordercolor":"#333333","headerborder":"#1a1a1a","lightdark":"#191919","lightdarkinside":"#232121","link":"#005580","linktext":"#afb1b6","pitchdark":"#000000","primaryheader":"#322f4e","primeheader":"#005580","secondarylink":"#005580","state":"custom"}
+{"activityhero":"#005580","activityherotext":"#ffffff","groupmsgborder":"#f05837","headerbackground":"#f05837","headerborder":"#1a1a1a","headercolor":"inherit","lightdark":"#191919","lightdarkinside":"#232121","lotusjumbo":"#1b1a20","lotuslightdarkinside":"#363354","lotuslinkb":"#878fff","lotusprimary":"#322f4e","pitchdark":"#000000","primebordercolor":"#333333","primeheader":"#005580","primelink":"#005580"}
 ```  
 ![image](https://user-images.githubusercontent.com/28911975/113521800-c9856780-9569-11eb-9392-2ab2220ddce8.png)  
-  
+
 Here's the same theme, but with an image background (gif) set instead of #000000 for the background:  
 The full line set for `Background` is: `center no-repeat fixed url(https://data.whicdn.com/images/284177941/original.gif)`
 ```
-{"bordercolor":"#333333","headerborder":"#1a1a1a","lightdark":"#191919","lightdarkinside":"#232121","link":"#005580","linktext":"#afb1b6","pitchdark":"center no-repeat fixed url(https://data.whicdn.com/images/284177941/original.gif)","primaryheader":"#322f4e","primeheader":"#005580","secondarylink":"#005580","state":"custom"}
+{"activityhero":"#005580","activityherotext":"#ffffff","groupmsgborder":"#f05837","headerbackground":"#f05837","headerborder":"#1a1a1a","headercolor":"inherit","lightdark":"#191919","lightdarkinside":"#232121","lotusjumbo":"#1b1a20","lotuslightdarkinside":"#363354","lotuslinkb":"#878fff","lotusprimary":"#322f4e","pitchdark":"center no-repeat fixed url(https://data.whicdn.com/images/284177941/original.gif)","primebordercolor":"#333333","primeheader":"#005580","primelink":"#005580"}
 ```  
 ![image](https://user-images.githubusercontent.com/28911975/113522163-60ebba00-956c-11eb-955b-476c46aa5b6f.png)
 

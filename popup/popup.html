@@ -10,57 +10,82 @@
     <h1 class="header">Minds Darker Settings</h1>
     <div class="popupContainer">
       <h2>Set Default Themes</h2>
-      <div class="option" id="themeSel">
-        <label style="display: inline-block;">
-          <button type="button" id="setDarkerTheme">Set Darker Theme</button>
-        </label>
-        <label style="display: inline-block;">
-          <button type="button" id="setLotusTheme">Set Lotus Theme</button>
-        </label>
+      <div style="text-align: center;">
+        <button type="button" class="btn" id="setDarkerTheme">Set Darker Theme</button>
+        <button type="button" class="btn" id="setLotusTheme">Set Lotus Theme</button>
       </div>
-      <!-- /// -->
-      <h2>Set Theme Options (Darker)</h2>
-      <div class="option">
-        <div class="gridItem"><p>Background:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #000000" id="pitchdark"></div>
-        <div class="gridItem"><p>Border Color:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #333333" id="primebordercolor"></div>
-        <div class="gridItem"><p>Scroll Feed Background:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #191919" id="lightdark"></div>
-        <div class="gridItem"><p>Header Border:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #232121" id="lightdarkinside"></div>
-        <div class="gridItem"><p>Header Color:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #1a1a1a" id="headerborder"></div>
-        <div class="gridItem"><p>Settings Hover:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primelink"></div>
-        <div class="gridItem"><p>Discovery Top Item Color:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #d53410" id="primesecondarylink"></div>
-        <div class="gridItem"><p>Discovery Top Item Text:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #afb1b6" id="primelinktext"></div>
-        <div class="gridItem"><p>Group Msg Toggle Border:</p></div>
-        <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primeheader"></div>
+      <div id="darkThemeInputs">
+        <h2>Set Theme Options (Darker)</h2>
+        <button type="button" class="collapser">Backgrounds</button>
+        <div class="colContent">
+          <div class="option">
+            <div class="gridItem"><p>Main Background:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #000000" id="pitchdark"></div>
+            <div class="gridItem"><p>Feed Background:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #191919" id="lightdark"></div>
+            <div class="gridItem"><p>Feed Items Background:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #232121" id="lightdarkinside"></div>
+          </div>
+        </div>
+        <br>
+        <button type="button" class="collapser">Header</button>
+        <div class="colContent">
+          <div class="option">
+            <div class="gridItem"><p>Header Background Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="headerbackground"></div>
+            <div class="gridItem"><p>Header Border Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #1a1a1a" id="headerborder"></div>
+            <div class="gridItem"><p>Header Text Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: inherit" id="headercolor"></div>
+          </div>
+        </div>
+        <br>
+        <button type="button" class="collapser">Borders</button>
+        <div class="colContent">
+          <div class="option">
+            <div class="gridItem"><p>Normal Border Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #333333" id="primebordercolor"></div>
+            <div class="gridItem"><p>Group Msg Border:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="groupmsgborder"></div>
+          </div>
+        </div>
+        <br>
+        <button type="button" class="collapser">Discovery Area</button>
+        <div class="colContent">
+          <div class="option">
+            <div class="gridItem"><p>Top Background Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #d53410" id="activityhero"></div>
+            <div class="gridItem"><p>Top Text Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #afb1b6" id="activityherotext"></div>
+          </div>
+        </div>
+        <br>
+        <button type="button" class="collapser">Miscellaneous Colors</button>
+        <div class="colContent">
+          <div class="option">
+            <div class="gridItem"><p>General Link/Hover:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primelink"></div>
+            <div class="gridItem"><p>General Orange Color:</p></div>
+            <div class="gridItem"><input type="text" placeholder="Default: #f05837" id="primeheader"></div>
+          </div>
+        </div>
       </div>
       <div style="text-align: center;">
-        <button type="button" id="saveDarker">Save Changes</button>
+        <button type="button" class="saveBtn" id="saveDarker">Save Changes</button>
       </div>
       <h2>Set Theme Options (Lotus)</h2>
       <div class="option">
         <h1>W.I.P</h1>
       </div>
       <h2>Import/Export Theme Settings</h2>
-      <div class="option">
-        <label style="display: inline-block;">
-          <button type="button" id="importTheme">Import Theme</button>
-        </label>
-        <label style="display: inline-block;">
-          <button type="button" id="exportTheme">Export Theme</button>
-        </label>
+      <div style="text-align: center;">
+        <button type="button" class="saveBtn" id="importTheme">Import Theme</button>
+        <button type="button" class="saveBtn" id="exportTheme">Export Theme</button>
       </div>
-      <h2>Dev Options</h2>
-      <div class="option">
-        <label style="display: inline-block;">
-          <button type="button" style="background: red;" id="_clearCache">CLEAR LOCAL STORAGE</button>
-        </label>
+      <h2>Reset Options</h2>
+      <p>Note: this is only needed if you need to completely reset the plugin settings to its default Darker state to prevent errors or delete old data from older updates.</p>
+      <div style="text-align: center;">
+        <button type="button" class="btnLargeWarn" id="_clearCache">CLEAR LOCAL STORAGE</button>
       </div>
     </div>
   </body>

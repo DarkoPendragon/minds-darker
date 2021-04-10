@@ -22,18 +22,21 @@ body, m-page {
   position: absolute;
   right: 0;
 }
-
 .m-v3Topbar__top {
-  background-color: var(--prime-header) !important;
+  background: var(--header-background) !important;
   border-bottom: 1px solid var(--header-border) !important;
+  color: var(--header-color) !important;
 }
-
-.m-theme__dark .m-v3Topbar__top .m-v3Topbar__searchBox m-search--bar.m-search__bar--active,
+.m-v3Topbar__top * {
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+/* .m-theme__dark .m-v3Topbar__top .m-v3Topbar__searchBox m-search--bar.m-search__bar--active,
 .m-theme__dark .m-v3Topbar__top .m-v3Topbar__searchBox .m-search--bar {
   border: 0 !important;
   background-color: var(--prime-header) !important;
   transition: background-color ease-in-out 1s, -webkit-box-shadow ease-in-out 1s !important;
-}
+} */
 
 .m-v3Topbar__top .m-v3Topbar__searchBox m-search--bar>.mdl-textfield input,
 .m-v3Topbar__top .m-v3Topbar__searchBox m-search--bar>.mdl-textfield input:focus {
@@ -211,7 +214,7 @@ minds-groups-profile-conversation .m-group__chat .m-comments__thread,
 }
 .m-theme__2020 .m-groupGrid__toggleBtn {
   border: 2px solid !important;
-  border-image-source: linear-gradient(32deg, var(--prime-header), var(--prime-header)) !important;
+  border-image-source: linear-gradient(32deg, var(--group-msg-border), var(--group-msg-border)) !important;
   border-image-slice: 1 !important;
 }
 
@@ -224,12 +227,12 @@ li.m-userMenuDropdown__item:not(.m-userMenuDropdown__username):not(.m-userMenuDr
 
 .m-discoveryTrends__trend.m-discoveryTrends__trend--hero a>div,
 .m-activityContent__media--richEmbed .meta {
-  background-color: var(--prime-secondary-link) !important;
+  background-color: var(--activity-hero) !important;
 }
 
 .m-discoveryTrends__trend.m-discoveryTrends__trend--hero span,
 .m-activityContent__media--richEmbed .meta p {
-  color: var(--prime-linktext) !important;
+  color: var(--activity-hero-text) !important;
 }
 
 /* Scroller that I didn't steal from my website */

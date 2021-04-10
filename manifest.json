@@ -3,7 +3,7 @@
   "name": "Minds Darker",
   "author": "Darko Pendragon",
   "description": "Attempts to make Minds.com's dark mode better",
-  "version": "1.2",
+  "version": "1.2.1",
   "icons": {
     "16": "./assets/icon.png",
     "48": "./assets/icon.png",
@@ -24,9 +24,9 @@
   "background": {
     "matches": [
       "https://www.minds.com/*"
-    ],
-    "scripts": ["./js/background.js"]
+    ]
   },
+  "options_page": "./popup/popup.html",
   "browser_action": {
     "default_title": "Minds Darker",
     "default_icon": "./assets/icon.png",

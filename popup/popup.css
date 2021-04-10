@@ -1,6 +1,6 @@
 body {
   /* height: 450px; */
-  min-width: 600px;
+  width: 600px;
   background-color: #000000;
   border: 1px solid #f05837;
   color: #ffffff;
@@ -32,9 +32,10 @@ h2 {
 }
 .option {
   display: inline-grid;
+  width: auto;
   grid-template-columns: max-content 100%;
   grid-column-gap: 5px;
-  margin: 4px 16px 12px 16px;
+  /* margin: 4px 16px 12px 16px; */
 }
 .option input {
   height: 50%;
@@ -44,6 +45,63 @@ h2 {
 }
 .gridItem {
   display: inline-grid;
+}
+.collapser {
+  background-color: #f05837;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+.active, .collapser:hover {
+  background-color: #f05837;
+}
+.colContent {
+  padding: 0px 18px;
+  background-color: #191919;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.collapseHeader {
+  width: 100%;
+  background: #f05837;
+  border: solid 2px #f05837;
+}
+.collapseContent {
+  display: none;
+}
+.saveBtn {
+  cursor: pointer;
+  background-color: #333333;
+  color: #ffffff;
+  margin-top: 18px;
+  width: 500px;
+  padding: 10px;
+}
+.btn {
+  cursor: pointer;
+  background-color: #333333;
+  color: #ffffff;
+  width: 250px;
+  padding: 10px;
+}
+.btnLarge {
+  cursor: pointer;
+  background-color: #333333;
+  color: #ffffff;
+  margin-top: 18px;
+  width: 100%;
+  padding: 10px;
+}
+.btnLargeWarn {
+  cursor: pointer;
+  background-color: red;
+  color: #ffffff;
+  width: 100%;
+  padding: 10px;
 }
 
 /* scroller */
